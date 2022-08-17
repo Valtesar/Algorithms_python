@@ -4,8 +4,9 @@
 def euclidean_alg(x: int, y: int) -> int:
     while (x != 0) & (y != 0):
         if x < y:
-            x, y = y, x
-        x %= y
+            y %= x
+        else:
+            x %= y
 
     return x + y
 
