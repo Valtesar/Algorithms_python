@@ -28,3 +28,7 @@ def test_sieve_of_eratosthenes():
     for number in test_value:
         answer = sieve_of_eratosthenes(number)
         assert answer == test_value[number]
+
+
+if __name__ == '__main__':
+    test_sieve_of_eratosthenes()

@@ -1,3 +1,4 @@
+import random
 """В имеющийся отсортированный массив натуральных чисел найти номер позации куда необходимо вставить число <x>,
    чтобы массив остался отсортированным. Если в массиве есть числа равные числу <x>, то необходимо вставить число <x>\
    перед ними"""
@@ -19,3 +20,30 @@ def binary_search(x: int, arr: list) -> int:
             right_pos = center_pos
 
         return left_pos
+
+
+def generate_value(x, l):
+    """Генерируем массив с помощью спискового включения.
+       x - Кол-во возвращаемых массивов
+       l - Длинна возвращаемых массивов"""
+
+    start = 20
+    end = 50
+    for i in range(x):
+        arr = [random.randint(start, end)
+               for _ in range(l)]
+        k = random.randint(start, end)
+        start = end
+        end += 20
+        yield sorted(arr), k
+
+
+def test_binary_search():
+    test_value = generate_value(5, 10)
+    for mas in test_value:
+        arr, x = mas
+        print(f'Answer for number {x} in array {arr} is position {binary_search(x, arr)}')
+
+
+if __name__ == '__main__':
+    test_binary_search()
