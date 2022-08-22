@@ -17,5 +17,18 @@ def generator_lists(count, length):
     """Создаем функцию генератор списков с параметрами:
         count - колличество списков,
         length - длинна списков"""
+    start_num = 0
+    end_num = 999
+    for i in range(count):
+        arr = [random.randint(start_num, end_num) for _ in range(length)]
+        yield arr
+
 
 def bubble_sort_test():
+    test_value = generator_lists(5, 10)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {bubble_sort(mas)}\n')
+
+
+if __name__ == '__main__':
+    bubble_sort_test()
