@@ -3,14 +3,16 @@ import random
 
 
 def bubble_sort(numbers: list) -> list:
-    flag = True
-    while flag:
-        flag = False
-        for i in range(len(numbers) - 1):
-            if numbers[i] > numbers[i + 1]:
-                numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
-                flag = True
-    return numbers
+    n = len(numbers)
+    for i in range(n):
+        numbers_sorted = True
+
+        for j in range(n - i - 1):
+            if numbers[j] > numbers[j + 1]:
+                numbers[j], numbers[j + 1] = numbers[j + 1], numbers[j]
+                numbers_sorted = False
+        if numbers_sorted:
+            return numbers
 
 
 def generator_lists(count, length):
