@@ -22,16 +22,16 @@ def binary_search(x: int, arr: list) -> int:
         return left_pos
 
 
-def generate_value(x, l):
+def generate_value(count, length):
     """Генерируем массив с помощью спискового включения.
        x - Кол-во возвращаемых массивов
        l - Длинна возвращаемых массивов"""
 
     start = 20
     end = 50
-    for i in range(x):
+    for i in range(count):
         arr = [random.randint(start, end)
-               for _ in range(l)]
+               for _ in range(length)]
         k = random.randint(start, end)
         start = end
         end += 20

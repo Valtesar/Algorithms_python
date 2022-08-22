@@ -10,3 +10,6 @@ def bubble_sort(numbers: list) -> list:
                 numbers[i], numbers[i + 1] = numbers[i + 1], numbers[i]
                 flag = True
     return numbers
+
+
+def bubble_sort_test():
