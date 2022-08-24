@@ -2,6 +2,7 @@ from random import randint
 from timeit import repeat
 from bubble_sort_alg import bubble_sort
 from insertion_sort_alg import insertion_sort
+from merge_sort_alg import merge_sort
 
 
 def run_sorting_algorithm(algorithm, numbers):
@@ -21,5 +22,4 @@ if __name__ == "__main__":
     run_sorting_algorithm(algorithm="sorted", numbers=array)
     run_sorting_algorithm(algorithm="bubble_sort", numbers=array)
     run_sorting_algorithm(algorithm="insertion_sort", numbers=array)
-
-
+    run_sorting_algorithm(algorithm="merge_sort", numbers=array)
