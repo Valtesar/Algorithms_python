@@ -1,4 +1,4 @@
-import random
+from generator_lists import generator_lists
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки 'пузырьком'"""
 
 
@@ -13,17 +13,6 @@ def bubble_sort(numbers: list) -> list:
                 numbers_sorted = False
         if numbers_sorted:
             return numbers
-
-
-def generator_lists(count, length):
-    """Создаем функцию генератор списков с параметрами:
-        count - колличество списков,
-        length - длинна списков"""
-    start_num = 0
-    end_num = 1000
-    for i in range(count):
-        arr = [random.randint(start_num, end_num) for _ in range(length)]
-        yield arr
 
 
 def bubble_sort_test():
