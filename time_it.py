@@ -28,14 +28,8 @@ def run_sorting_algorithm(algorithm, numbers=None):
         f" Avg exec time: {statistics.fmean(times):.8f}")
 
 
-if __name__ == "__main__":
-    t = time.process_time()
-    pool = ThreadPool()
-    params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort"]
-    pool.map(run_sorting_algorithm, params)
-    elapsed_time = time.process_time() - t
-    print(f"Time from start: {elapsed_time}")
-    print("==================================================================")
+def single_process_run():
+    print("Single process function started!")
     n = time.process_time()
     run_sorting_algorithm(algorithm="sorted")
     run_sorting_algorithm(algorithm="insertion_sort")
@@ -43,6 +37,25 @@ if __name__ == "__main__":
     run_sorting_algorithm(algorithm="merge_sort")
     elapsed_time2 = time.process_time() - n
     print(f"Time from start: {elapsed_time2}")
+    return elapsed_time2
+
+
+def multi_process_run():
+    print("Multi process function started!")
+    t = time.process_time()
+    pool = ThreadPool()
+    params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort"]
+    pool.map(run_sorting_algorithm, params)
+    elapsed_time = time.process_time() - t
+    print(f"Time from start: {elapsed_time}")
+    return elapsed_time
+
+
+if __name__ == "__main__":
+    elapsed_time_single = single_process_run()
+    print("==================================================================")
+    elapsed_time_multi = multi_process_run()
     print("--------------------\nRun with multi-process {0} then single-process on: {1}".format(
-        "faster" if elapsed_time2 - elapsed_time >= 0 else "slower",
-        elapsed_time2 - elapsed_time if elapsed_time2 >= elapsed_time else elapsed_time - elapsed_time2))
+        "faster" if elapsed_time_single - elapsed_time_multi >= 0 else "slower",
+        elapsed_time_single - elapsed_time_multi if elapsed_time_single >= elapsed_time_multi
+        else elapsed_time_multi - elapsed_time_single))
