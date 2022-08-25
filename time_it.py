@@ -7,11 +7,12 @@ from bubble_sort_alg import bubble_sort
 from insertion_sort_alg import insertion_sort
 from merge_sort_alg import merge_sort
 from quicksort_alg import quick_sort
+from timsort_alg import tim_sort
 
 
-ARRAY_LENGTH = 1000
+ARRAY_LENGTH = 5000
 
-array = [randint(0, 100) for i in range(ARRAY_LENGTH)]
+array = [randint(0, 1000) for i in range(ARRAY_LENGTH)]
 
 
 def run_sorting_algorithm(algorithm, numbers=None):
@@ -20,7 +21,7 @@ def run_sorting_algorithm(algorithm, numbers=None):
     setup_code = f"from __main__ import {algorithm}" \
         if algorithm != "sorted" else ""
     stmt = f"{algorithm}({numbers})"
-    times = repeat(setup=setup_code, stmt=stmt, repeat=10, number=10)
+    times = repeat(setup=setup_code, stmt=stmt, repeat=1, number=10)
 
     print(
         f"Algorithm: {algorithm}."
@@ -37,8 +38,15 @@ def single_process_run():
     run_sorting_algorithm(algorithm="bubble_sort")
     run_sorting_algorithm(algorithm="merge_sort")
     run_sorting_algorithm(algorithm="quick_sort")
+    run_sorting_algorithm(algorithm="tim_sort")
     elapsed_time2 = time.process_time() - n
-    print(f"Time from start: {elapsed_time2}")
+    if (elapsed_time2 % 60) > 0:
+        minutes = elapsed_time2 // 60
+        seconds = elapsed_time2 - (minutes * 60)
+        print(f"Time from start: {elapsed_time2}, minutes = {minutes}, seconds = {seconds}")
+    else:
+        print(f"Time from start: {elapsed_time2}")
+
     return elapsed_time2
 
 
@@ -46,7 +54,7 @@ def multi_process_run():
     print("Multi process function started!")
     t = time.process_time()
     pool = ThreadPool()
-    params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort", "quick_sort"]
+    params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort", "quick_sort", "tim_sort"]
     pool.map(run_sorting_algorithm, params)
     elapsed_time = time.process_time() - t
     print(f"Time from start: {elapsed_time}")
@@ -55,7 +63,7 @@ def multi_process_run():
 
 if __name__ == "__main__":
     elapsed_time_single = single_process_run()
-    print("==================================================================")
+    print("=" * 100)
     elapsed_time_multi = multi_process_run()
     print("--------------------\nRun with multi-process {0} then single-process on: {1}".format(
         "faster" if elapsed_time_single - elapsed_time_multi >= 0 else "slower",
