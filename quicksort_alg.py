@@ -11,7 +11,7 @@ def quicksort(numbers):
 
     low, same, high = [], [], []
 
-    pivot = numbers[randint(0, len(numbers - 1))]
+    pivot = numbers[randint(0, len(numbers) - 1)]
 
     for number in numbers:
         if number < pivot:
@@ -23,3 +23,6 @@ def quicksort(numbers):
 
     return quicksort(low) + same + quicksort(high)
 
+
+if __name__ == '__main__':
+    print(quicksort([31, 23, 45, 100, 9, 34, 85, 72, 182]))
