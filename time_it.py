@@ -10,7 +10,7 @@ from quicksort_alg import quick_sort
 from timsort_alg import tim_sort
 
 
-ARRAY_LENGTH = 5000
+ARRAY_LENGTH = 6000
 
 array = [randint(0, 1000) for i in range(ARRAY_LENGTH)]
 
@@ -40,7 +40,7 @@ def single_process_run():
     run_sorting_algorithm(algorithm="quick_sort")
     run_sorting_algorithm(algorithm="tim_sort")
     elapsed_time2 = time.process_time() - n
-    if (elapsed_time2 % 60) > 0:
+    if (elapsed_time2 % 60) >= 1:
         minutes = elapsed_time2 // 60
         seconds = elapsed_time2 - (minutes * 60)
         print(f"Time from start: {elapsed_time2}, minutes = {minutes}, seconds = {seconds}")
@@ -57,7 +57,12 @@ def multi_process_run():
     params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort", "quick_sort", "tim_sort"]
     pool.map(run_sorting_algorithm, params)
     elapsed_time = time.process_time() - t
-    print(f"Time from start: {elapsed_time}")
+    if (elapsed_time % 60) >= 1:
+        minutes = elapsed_time // 60
+        seconds = elapsed_time - (minutes * 60)
+        print(f"Time from start: {elapsed_time}, minutes = {minutes}, seconds = {seconds}")
+    else:
+        print(f"Time from start: {elapsed_time}")
     return elapsed_time
 
 
