@@ -6,6 +6,7 @@ import time
 from bubble_sort_alg import bubble_sort
 from insertion_sort_alg import insertion_sort
 from merge_sort_alg import merge_sort
+from quicksort_alg import quick_sort
 
 
 ARRAY_LENGTH = 1000
@@ -35,6 +36,7 @@ def single_process_run():
     run_sorting_algorithm(algorithm="insertion_sort")
     run_sorting_algorithm(algorithm="bubble_sort")
     run_sorting_algorithm(algorithm="merge_sort")
+    run_sorting_algorithm(algorithm="quick_sort")
     elapsed_time2 = time.process_time() - n
     print(f"Time from start: {elapsed_time2}")
     return elapsed_time2
@@ -44,7 +46,7 @@ def multi_process_run():
     print("Multi process function started!")
     t = time.process_time()
     pool = ThreadPool()
-    params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort"]
+    params = ["sorted", "bubble_sort", "insertion_sort", "merge_sort", "quick_sort"]
     pool.map(run_sorting_algorithm, params)
     elapsed_time = time.process_time() - t
     print(f"Time from start: {elapsed_time}")

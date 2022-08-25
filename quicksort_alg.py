@@ -4,7 +4,7 @@ from generator_lists import generator_lists
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки методом слияния"""
 
 
-def quicksort(numbers):
+def quick_sort(numbers):
 
     if len(numbers) < 2:
         return numbers
@@ -21,8 +21,12 @@ def quicksort(numbers):
         elif number > pivot:
             high.append(number)
 
-    return quicksort(low) + same + quicksort(high)
+    return quick_sort(low) + same + quick_sort(high)
+
+
+def quick_sort_test():
+    pass
 
 
 if __name__ == '__main__':
-    print(quicksort([31, 23, 45, 100, 9, 34, 85, 72, 182]))
+    quick_sort_test()

@@ -51,4 +51,3 @@ def merge_sort_test():
 
 if __name__ == '__main__':
     merge_sort_test()
-    print(merge_sort([9, 111, 43, 64, 21, 75, 554, 24, 0, 12, 10]))
