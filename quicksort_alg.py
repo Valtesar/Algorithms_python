@@ -25,7 +25,9 @@ def quick_sort(numbers):
 
 
 def quick_sort_test():
-    pass
+    test_value = generator_lists(5, 10)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {quick_sort(mas)}\n')
 
 
 if __name__ == '__main__':
