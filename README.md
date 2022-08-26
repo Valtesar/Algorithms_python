@@ -4,4 +4,4 @@ The file <b>time_it.py</b> is used to check the speed of algorithm execution and
 Which also allows you to run the execution of algorithms in a multiprocessor (as far as Python allows).
 
 <h3>What algorithms are present and their speed.</h3>
-<p class="img"><img src="images/algorithms.png" alt="Algorithms"></p>
+<p class="img"><img src="images/algs.png" alt="Algorithms"></p>
