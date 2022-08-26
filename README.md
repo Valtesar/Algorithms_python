@@ -1,8 +1,3 @@
-<style>
-   .img {
-    text-align: center;
-   }
-</style>
 <h3>Examples of important algorithms for use in development written in the Python 3.8 programming language.</h3>
 
 The file <b>time_it.py</b> is used to check the speed of algorithm execution and compare them. 
