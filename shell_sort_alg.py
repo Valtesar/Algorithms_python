@@ -1,3 +1,5 @@
+from generator_lists import generator_lists
+
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки методом Шелла"""
 
 
@@ -21,6 +23,12 @@ def shell_sort(numbers):
     return numbers
 
 
+def shell_sort_test():
+    test_value = generator_lists(5, 10)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {shell_sort(mas)}\n')
+
+
 if __name__ == '__main__':
-    print(shell_sort([93, 23, 56, 123, 563, 2, 124, 553, 423, 1245]))
+    shell_sort_test()
 

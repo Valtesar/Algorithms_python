@@ -1,4 +1,5 @@
 from merge_sort_alg import merge
+from generator_lists import generator_lists
 
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки гибридным методом"""
 
@@ -40,3 +41,6 @@ def tim_sort(numbers):
 
     return numbers
 
+
+if __name__ == '__main__':
+    pass
