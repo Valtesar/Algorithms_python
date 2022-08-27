@@ -17,3 +17,14 @@ def heapify(numbers, n, i):
         numbers[i], numbers[largest] = numbers[largest], numbers[i]
 
         heapify(numbers, n, largest)
+
+
+def heap_sort(numbers):
+    n = len(numbers)
+
+    for i in range(n // 2 - 1, -1, -1):
+        heapify(numbers, n, i)
+
+    for i in range(n - 1, 0, -1):
+        numbers[i], numbers[0] = numbers[0], numbers[i]
+        heapify(numbers, i, 0)
