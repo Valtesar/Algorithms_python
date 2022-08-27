@@ -32,9 +32,10 @@ def heap_sort(numbers):
 
 
 def heap_sort_test():
-    pass
+    test_value = generator_lists(5, 10)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {heap_sort(mas)}\n')
 
 
 if __name__ == '__main__':
-    x = [180, 23, 144, 14, 2123]
-    print(heap_sort(x))
+    heap_sort_test()
