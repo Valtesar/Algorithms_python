@@ -28,3 +28,13 @@ def heap_sort(numbers):
     for i in range(n - 1, 0, -1):
         numbers[i], numbers[0] = numbers[0], numbers[i]
         heapify(numbers, i, 0)
+    return numbers
+
+
+def heap_sort_test():
+    pass
+
+
+if __name__ == '__main__':
+    x = [180, 23, 144, 14, 2123]
+    print(heap_sort(x))
