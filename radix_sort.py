@@ -27,3 +27,13 @@ def counting_sort(numbers, exp1):
     for i in range(0, len(numbers)):
         numbers[i] = output[i]
 
+
+def radix_sort(numbers):
+    max_number = max(numbers)
+    exp = 1
+    while max_number / exp >= 1:
+        counting_sort(numbers, exp)
+        exp *= 10
+
+    return numbers
+
