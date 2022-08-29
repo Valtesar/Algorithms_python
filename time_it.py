@@ -10,6 +10,7 @@ from quicksort_alg import quick_sort
 from timsort_alg import tim_sort
 from shell_sort_alg import shell_sort
 from heap_sort import heap_sort
+from radix_sort import radix_sort
 
 
 ARRAY_LENGTH = 2000
@@ -43,6 +44,7 @@ def single_process_run():
     # run_sorting_algorithm(algorithm="tim_sort")
     run_sorting_algorithm(algorithm="shell_sort")
     run_sorting_algorithm(algorithm="heap_sort")
+    run_sorting_algorithm(algorithm="radix_sort")
 
     elapsed_time2 = time.process_time() - n
 
@@ -62,7 +64,7 @@ def multi_process_run():
     pool = ThreadPool()
     params = [
         "sorted", "bubble_sort", "insertion_sort", "merge_sort",
-        "quick_sort", "shell_sort", "heap_sort"]
+        "quick_sort", "shell_sort", "heap_sort", "radix_sort"]
     pool.map(run_sorting_algorithm, params)
 
     elapsed_time = time.process_time() - t
