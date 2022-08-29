@@ -18,6 +18,9 @@ def full_random_generator_lists(count, length):
 
 
 def reversed_generator_lists(count, length):
+    """Создаем функцию генератор списков чисел обратной последовательности с параметрами:
+            count - колличество списков,
+            length - длинна списков"""
 
     for i in range(count):
         arr = list(reversed(range(0, length)))
