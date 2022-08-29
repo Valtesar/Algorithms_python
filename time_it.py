@@ -13,6 +13,10 @@ from heap_sort import heap_sort
 from radix_sort import radix_sort
 
 
+ALGORITHMS = [
+        "sorted", "bubble_sort", "insertion_sort", "merge_sort",
+        "quick_sort", "shell_sort", "heap_sort", "radix_sort"]
+
 ARRAY_LENGTH = 2000
 
 array = [randint(0, 1000) for i in range(ARRAY_LENGTH)]
@@ -36,15 +40,8 @@ def run_sorting_algorithm(algorithm, numbers=None):
 def single_process_run():
     print("Single process function started!")
     n = time.process_time()
-    run_sorting_algorithm(algorithm="sorted")
-    run_sorting_algorithm(algorithm="insertion_sort")
-    run_sorting_algorithm(algorithm="bubble_sort")
-    run_sorting_algorithm(algorithm="merge_sort")
-    run_sorting_algorithm(algorithm="quick_sort")
-    # run_sorting_algorithm(algorithm="tim_sort")
-    run_sorting_algorithm(algorithm="shell_sort")
-    run_sorting_algorithm(algorithm="heap_sort")
-    run_sorting_algorithm(algorithm="radix_sort")
+    for func in ALGORITHMS:
+        run_sorting_algorithm(algorithm=func)
 
     elapsed_time2 = time.process_time() - n
 
@@ -62,10 +59,7 @@ def multi_process_run():
     print("Multi process function started!")
     t = time.process_time()
     pool = ThreadPool()
-    params = [
-        "sorted", "bubble_sort", "insertion_sort", "merge_sort",
-        "quick_sort", "shell_sort", "heap_sort", "radix_sort"]
-    pool.map(run_sorting_algorithm, params)
+    pool.map(run_sorting_algorithm, ALGORITHMS)
 
     elapsed_time = time.process_time() - t
 
