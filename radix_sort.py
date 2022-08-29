@@ -38,5 +38,11 @@ def radix_sort(numbers):
     return numbers
 
 
+def radix_sort_test():
+    test_value = generator_lists(5, 1000)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {radix_sort(mas)}\n')
+
+
 if __name__ == '__main__':
-    print(radix_sort([10, 23, 1, 56, 2, 4, 100, 11]))
+    radix_sort_test()
