@@ -1,4 +1,4 @@
-from generator_lists import generator_lists
+from generator_lists import full_random_generator_lists
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки гибридным методом"""
 
 
@@ -32,7 +32,7 @@ def heap_sort(numbers):
 
 
 def heap_sort_test():
-    test_value = generator_lists(5, 10)
+    test_value = full_random_generator_lists(5, 10)
     for mas in test_value:
         print(f'Original list is: {*mas,}\nSorted list is: {heap_sort(mas)}\n')
 
