@@ -11,11 +11,12 @@ from timsort_alg import tim_sort
 from shell_sort_alg import shell_sort
 from heap_sort import heap_sort
 from radix_sort import radix_sort
+from counting_sort import counting_sort
 
 
 ALGORITHMS = [
         "sorted", "bubble_sort", "insertion_sort", "merge_sort",
-        "quick_sort", "shell_sort", "heap_sort", "radix_sort"]
+        "quick_sort", "shell_sort", "heap_sort", "radix_sort", "counting_sort"]
 
 ARRAY_LENGTH = 2000
 
