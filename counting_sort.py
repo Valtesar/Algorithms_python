@@ -25,3 +25,19 @@ def counting_sort(numbers):
         numbers[i] = output_numbers[i]
 
     return numbers
+
+
+def counting_sort_test():
+    print('--- Full random list sorting ---')
+    test_value = full_random_generator_lists(5, 10)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {counting_sort(mas)}\n')
+
+    print('--- Reversed range list sorting ---')
+    test_value = reversed_generator_lists(1, 20)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {counting_sort(mas)}\n')
+
+
+if __name__ == '__main__':
+    counting_sort_test()
