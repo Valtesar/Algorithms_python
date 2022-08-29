@@ -37,3 +37,6 @@ def radix_sort(numbers):
 
     return numbers
 
+
+if __name__ == '__main__':
+    print(radix_sort([10, 23, 1, 56, 2, 4, 100, 11]))
