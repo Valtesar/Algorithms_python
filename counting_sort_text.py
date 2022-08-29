@@ -1,9 +1,12 @@
+from random import randint
+import random
+from string import ascii_letters, digits
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки методом подсчета"""
 
 
 def counting_sort(numbers):
-    output = [0 for i in range(len(numbers))]
-    count = [0 for i in range(256)]
+    output = [0 for _ in range(len(numbers))]
+    count = [0 for _ in range(256)]
     answer = ["" for _ in numbers]
 
     for i in numbers:
@@ -21,5 +24,12 @@ def counting_sort(numbers):
     return answer
 
 
+def counting_sort_test():
+    n = randint(5, 10)
+    text = ''.join(random.choices(ascii_letters + digits, k=n))
+    print(f"Original string is:\n{text}")
+    print(f"Sorted string is:\n{counting_sort(text)}")
+
+
 if __name__ == '__main__':
-    print(counting_sort('Hello world'))
+    counting_sort_test()
