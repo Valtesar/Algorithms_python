@@ -1,4 +1,5 @@
 from instruments.generator_lists import full_random_generator_lists
+from instruments.generator_lists import reversed_generator_lists
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки 'пузырьком'"""
 
 
@@ -16,7 +17,13 @@ def bubble_sort(numbers: list) -> list:
 
 
 def bubble_sort_test():
+    print('--- Full random list sorting ---')
     test_value = full_random_generator_lists(5, 10)
+    for mas in test_value:
+        print(f'Original list is: {*mas,}\nSorted list is: {bubble_sort(mas)}\n')
+
+    print('--- Reversed range list sorting ---')
+    test_value = reversed_generator_lists(1, 20)
     for mas in test_value:
         print(f'Original list is: {*mas,}\nSorted list is: {bubble_sort(mas)}\n')
 
