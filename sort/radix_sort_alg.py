@@ -1,5 +1,5 @@
-from generator_lists import full_random_generator_lists
-from generator_lists import reversed_generator_lists
+from instruments.generator_lists import full_random_generator_lists
+from instruments.generator_lists import reversed_generator_lists
 """Сортировка элементов списка в порядке возрастания с использованием алгоритма сортировки поразрядным методом"""
 
 

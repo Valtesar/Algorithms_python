@@ -3,16 +3,6 @@ from timeit import repeat
 import statistics
 from multiprocessing.pool import ThreadPool
 import time
-from bubble_sort_alg import bubble_sort
-from insertion_sort_alg import insertion_sort
-from merge_sort_alg import merge_sort
-from quicksort_alg import quick_sort
-from timsort_alg import tim_sort
-from shell_sort_alg import shell_sort
-from heap_sort import heap_sort
-from radix_sort import radix_sort
-from counting_sort import counting_sort
-
 
 ALGORITHMS = [
         "sorted", "bubble_sort", "insertion_sort", "merge_sort",
